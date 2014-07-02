@@ -1,4 +1,4 @@
-package com.jp.userrun.data;
+package com.jp.userrun.model;
 
 public class Toy {
 
