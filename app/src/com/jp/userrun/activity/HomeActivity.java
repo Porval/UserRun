@@ -1,11 +1,10 @@
-package com.jp.userrun;
+package com.jp.userrun.activity;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.widget.ListView;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Background;
+import com.jp.userrun.R;
+
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -15,16 +14,5 @@ public class HomeActivity extends Activity {
 
     @ViewById(R.id.list)
     public ListView mListView;
-
-    @AfterViews
-    void init() {
-
-    }
-
-    @Background
-    void loadPluginData() {
-
-    }
-
 
 }
