@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 
 import com.jp.userrun.App;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
  * 这是android.context.res.Resources的static版，方便使用。
  */
 public class Res {
+    private static final String TAG = Res.class.getName();
+
     private static final Resources sRes = App.get().getResources();
 
     public static Resources get() {
@@ -70,5 +73,19 @@ public class Res {
         }
 
         return itemIds;
+    }
+
+    public static String readAssertFileContent(String fileName) {
+        InputStream stream = null;
+        try {
+            stream = sRes.getAssets().open(fileName);
+            return IOUtils.convertStreamToString(stream);
+        } catch (Exception e) {
+            Logger.e(TAG, e);
+        } finally {
+            IOUtils.closeSilently(stream);
+        }
+
+        return "";
     }
 }
