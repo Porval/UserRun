@@ -18,8 +18,7 @@ public class App extends Application {
 
         int isFirstLaunch = Pref.ofApp().getInt(Constants.PREF_KEY_FIRST_LAUNCH, Constants.FALSE);
         if (Utils.isTrue(isFirstLaunch)) {
-            //
+            //TODO load toy data
         }
-
     }
 }
